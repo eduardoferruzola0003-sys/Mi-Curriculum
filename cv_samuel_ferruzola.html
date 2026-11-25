@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Currículum vitae de Samuel Eduardo Ferruzola Vera. Formación en sistemas, logística y experiencia operativa.">
+  <title>Samuel Eduardo Ferruzola Vera | Currículum Vitae</title>
+  <style>
+    :root {
+      --navy: #142b4a;
+      --blue: #2463a6;
+      --light-blue: #eaf2fb;
+      --ink: #263445;
+      --muted: #657386;
+      --line: #dce4ed;
+      --paper: #ffffff;
+      --bg: #edf1f6;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    .page {
+      width: min(100% - 32px, 1000px);
+      margin: 38px auto;
+      background: var(--paper);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 55px rgba(20, 43, 74, .12);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      align-items: center;
+      padding: 48px 54px;
+      color: white;
+      background: linear-gradient(125deg, #142b4a 0%, #1d4775 65%, #286ca8 100%);
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #c6dcf4;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 680px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.12;
+      letter-spacing: -.035em;
+    }
+
+    .headline {
+      margin: 14px 0 0;
+      color: #e4eef9;
+      font-size: 1.05rem;
+    }
+
+    .location {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      color: #d5e5f5;
+      font-size: .92rem;
+    }
+
+    .photo-wrap {
+      width: 142px;
+      height: 142px;
+      padding: 5px;
+      border: 2px solid rgba(255,255,255,.55);
+      border-radius: 50%;
+      background: rgba(255,255,255,.12);
+      flex-shrink: 0;
+    }
+
+    .photo-wrap img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #dce7f2;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 290px 1fr;
+    }
+
+    aside {
+      padding: 38px 30px 44px;
+      background: #f6f8fb;
+      border-right: 1px solid var(--line);
+    }
+
+    main { padding: 38px 44px 48px; }
+
+    section { margin: 0 0 32px; }
+    section:last-child { margin-bottom: 0; }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin: 0 0 18px;
+      color: var(--navy);
+      font-size: 1.08rem;
+      letter-spacing: .035em;
+      text-transform: uppercase;
+    }
+
+    h2::before {
+      content: "";
+      width: 5px;
+      height: 22px;
+      border-radius: 4px;
+      background: var(--blue);
+    }
+
+    h3 {
+      margin: 0 0 4px;
+      color: var(--navy);
+      font-size: 1.04rem;
+    }
+
+    p { margin: 0 0 12px; }
+    .muted { color: var(--muted); }
+    .contact-list, .skill-list, .plain-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contact-list li {
+      margin: 0 0 15px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-label {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--muted);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .hero a { color: white; }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-list li {
+      padding: 6px 10px;
+      border: 1px solid #d7e4f2;
+      border-radius: 7px;
+      background: white;
+      color: #294766;
+      font-size: .84rem;
+    }
+
+    .entry {
+      position: relative;
+      margin: 0 0 22px;
+      padding: 0 0 0 18px;
+      border-left: 2px solid #d8e5f2;
+    }
+
+    .entry:last-child { margin-bottom: 0; }
+    .entry::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: -6px;
+      width: 10px;
+      height: 10px;
+      border: 2px solid white;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 0 1px var(--blue);
+    }
+
+    .meta {
+      margin: 2px 0 8px;
+      color: var(--muted);
+      font-size: .88rem;
+      font-weight: 600;
+    }
+
+    .objective {
+      padding: 18px 20px;
+      border: 1px solid #dce8f5;
+      border-radius: 12px;
+      background: var(--light-blue);
+    }
+
+    .objective p { margin: 0; }
+
+    footer {
+      padding: 18px 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+      font-size: .82rem;
+    }
+
+    @media (max-width: 720px) {
+      .page { width: min(100% - 18px, 1000px); margin: 9px auto; border-radius: 12px; }
+      .hero { grid-template-columns: 1fr; padding: 34px 26px; }
+      .photo-wrap { grid-row: 1; width: 112px; height: 112px; }
+      .content { grid-template-columns: 1fr; }
+      aside, main { padding: 30px 26px; }
+      aside { border-right: 0; border-bottom: 1px solid var(--line); }
+    }
+
+    @media print {
+      @page { size: A4; margin: 12mm; }
+      body { background: white; }
+      .page { width: 100%; margin: 0; border-radius: 0; box-shadow: none; }
+      .hero { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .content { grid-template-columns: 31% 69%; }
+      aside { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Currículum Vitae</p>
+        <h1>Samuel Eduardo<br>Ferruzola Vera</h1>
+        <p class="headline">Tecnólogo en Desarrollo de Software · Estudiante de Ingeniería en Sistemas</p>
+        <p class="location">📍 Guayaquil, Ecuador</p>
+      </div>
+      <div class="photo-wrap">
+        <img src="foto.jpg" alt="Fotografía de Samuel Eduardo Ferruzola Vera">
+      </div>
+    </header>
+
+    <div class="content">
+      <aside>
+        <section id="contacto">
+          <h2>Contacto</h2>
+          <ul class="contact-list">
+            <li>
+              <span class="contact-label">Correo electrónico</span>
+              <a href="mailto:eduardoferruzola0001@gmail.com">eduardoferruzola0001@gmail.com</a>
+            </li>
+            <li>
+              <span class="contact-label">Teléfono</span>
+              <a href="tel:0979104696">0979104696</a>
+            </li>
+            <li>
+              <span class="contact-label">Residencia</span>
+              Guayaquil - Ecuador
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Habilidades</h2>
+          <ul class="skill-list">
+            <li>Organización</li>
+            <li>Trabajo en equipo</li>
+            <li>Responsabilidad</li>
+            <li>Comunicación</li>
+            <li>Proactividad</li>
+            <li>Gestión operativa</li>
+            <li>Aprendizaje continuo</li>
+            <li>Compromiso</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Áreas de interés</h2>
+          <ul class="plain-list">
+            <li>Gestión de proyectos</li>
+            <li>Análisis y planificación</li>
+            <li>Coordinación de actividades</li>
+            <li>Logística y operaciones</li>
+          </ul>
+        </section>
+      </aside>
+
+      <main>
+        <section id="objetivo">
+          <h2>Objetivo profesional</h2>
+          <div class="objective">
+            <p>Desarrollarme profesionalmente en las áreas de <strong>gestión de proyectos</strong> o <strong>análisis</strong>, aportando mis conocimientos en sistemas, organización y coordinación de actividades. Busco participar en la planificación, seguimiento y mejora de procesos, contribuyendo al cumplimiento de objetivos mediante el trabajo en equipo, la responsabilidad y el aprendizaje continuo.</p>
+          </div>
+        </section>
+
+        <section id="perfil">
+          <h2>Perfil profesional</h2>
+          <p>Soy Tecnólogo en Desarrollo de Software, graduado en 2024, y actualmente estudio Ingeniería en Sistemas en la Universidad de Guayaquil, cursando el cuarto semestre. Cuento con experiencia en trabajo operativo y conocimientos complementarios en bodega y logística. Me caracterizo por ser una persona responsable, proactiva y organizada, con capacidad para trabajar en equipo y disposición para aprender y mejorar continuamente.</p>
+        </section>
+
+        <section id="formacion">
+          <h2>Formación académica</h2>
+          <article class="entry">
+            <h3>Ingeniería en Sistemas</h3>
+            <p class="meta">Universidad de Guayaquil · 2025 – Actualidad</p>
+            <p>Estudiante de cuarto semestre.</p>
+          </article>
+          <article class="entry">
+            <h3>Tecnólogo en Desarrollo de Software</h3>
+            <p class="meta">Instituto Guayaquil · 2024</p>
+            <p>Título de tecnólogo.</p>
+          </article>
+        </section>
+
+        <section id="cursos">
+          <h2>Cursos complementarios</h2>
+          <article class="entry">
+            <h3>Curso de Bodega y Logística</h3>
+            <p class="meta">Instituto Humane</p>
+            <p>Formación complementaria en el área de bodega y logística.</p>
+          </article>
+        </section>
+
+        <section id="experiencia">
+          <h2>Experiencia laboral</h2>
+          <article class="entry">
+            <h3>Auxiliar de Parque · Jardines S.A.</h3>
+            <p class="meta">05/04/2021 – Actualidad</p>
+            <p>Ejecución de actividades operativas, apoyo en la organización de tareas y coordinación con el equipo. Cumplimiento de responsabilidades diarias para mantener el orden y contribuir a la correcta gestión del área.</p>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <footer>© 2026 Samuel Eduardo Ferruzola Vera · Currículum Vitae</footer>
+  </div>
+</body>
+</html>
